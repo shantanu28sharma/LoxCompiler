@@ -100,6 +100,21 @@ public class Scanner {
           // A comment goes until the end of the line.
           while (peek() != '\n' && !isAtEnd())
             advance();
+        } else if (match('*')) {
+          int count = 1;
+          while (!(peek() == '*' && peekNext() == '/' && match('*') && match('/') && --count == 0)) {
+            if (peek() == '\n') {
+              line++;
+            }
+            if ((peek() == '/' && peekNext() == '*' && match('/') && match('*'))) {
+              count++;
+              continue;
+            }
+            if (peek() == '*' && peekNext() == '/') {
+              continue;
+            }
+            advance();
+          }
         } else {
           addToken(SLASH);
         }
