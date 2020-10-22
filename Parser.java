@@ -28,9 +28,21 @@ class Parser {
   }
 
   private Expr equality() {
-    Expr expr = comparison();
+    Expr expr = comma();
 
     while (match(BANG_EQUAL, EQUAL_EQUAL)) {
+      Token operator = previous();
+      Expr right = comma();
+      expr = new Expr.Binary(expr, operator, right);
+    }
+
+    return expr;
+  }
+
+  private Expr comma() {
+    Expr expr = comparison();
+
+    while (match(COMMA)) {
       Token operator = previous();
       Expr right = comparison();
       expr = new Expr.Binary(expr, operator, right);
