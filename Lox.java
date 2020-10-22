@@ -1,4 +1,4 @@
-package com.craftinginterpreters.lox;
+package Lox;
 
 import java.io.BufferedReader;
 import java.io.IOException;
