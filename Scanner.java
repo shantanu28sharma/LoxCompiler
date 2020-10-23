@@ -123,6 +123,9 @@ public class Scanner {
       case '\t':
         // Ignore whitespace.
         break;
+      case '\n':
+        line++;
+        break;
       case '"':
         string();
         break;
@@ -239,6 +242,7 @@ public class Scanner {
 
   private void addToken(TokenType type, Object literal) {
     String text = source.substring(start, current);
+    System.out.println(type);
     tokens.add(new Token(type, text, literal, line));
   }
 
