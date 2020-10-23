@@ -28,7 +28,12 @@ public class AstPrinter implements Expr.Visitor<String> {
   }
 
   @Override
-  public String visitVariableExpr(Expr.Variable expr) {
+  public String visitVarExpr(Expr.Var expr) {
+    return "";
+  }
+
+  @Override
+  public String visitAssignExpr(Expr.Assign expr) {
     return "";
   }
 
