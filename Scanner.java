@@ -1,11 +1,11 @@
-package Lox;
+package com.craftinginterpreters.lox;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static Lox.TokenType.*;
+import static com.craftinginterpreters.lox.TokenType.*;
 
 public class Scanner {
   private final String source;
@@ -242,7 +242,6 @@ public class Scanner {
 
   private void addToken(TokenType type, Object literal) {
     String text = source.substring(start, current);
-    System.out.println(type);
     tokens.add(new Token(type, text, literal, line));
   }
 

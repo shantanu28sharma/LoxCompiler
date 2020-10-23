@@ -1,1 +1,1 @@
-Lox Compiler
+com.craftinginterpreters.lox Compiler
