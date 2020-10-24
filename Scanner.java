@@ -130,7 +130,7 @@ public class Scanner {
         string();
         break;
       case 'o':
-        if (peek() == 'r') {
+        if (match('r')) {
           addToken(OR);
         }
         break;
