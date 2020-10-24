@@ -129,11 +129,6 @@ public class Scanner {
       case '"':
         string();
         break;
-      case 'o':
-        if (match('r')) {
-          addToken(OR);
-        }
-        break;
       default:
         if (isDigit(c)) {
           number();
